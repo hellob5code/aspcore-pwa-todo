@@ -1,0 +1,42 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/lib/uikit/dist/css/uikit.min.css",
+    "inputFiles": [
+      "wwwroot/lib/uikit/dist/css/uikit.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/uikit/dist/js/uikit.min.js",
+    "inputFiles": [
+      "wwwroot/lib/uikit/dist/js/uikit.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/uikit/dist/js/uikit-icons.min.js",
+    "inputFiles": [
+      "wwwroot/lib/uikit/dist/js/uikit-icons.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/jquery/dist/jquery.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/dist/jquery.js"
+    ]
+  }
+]
