@@ -1,30 +1,32 @@
-var cacheName = 'mytodos-1';
-var dataCacheName = 'mytodos-v1';
+var cacheName = "mytodos-1";
+var dataCacheName = "mytodos-v1";
 
 var filesToCache = [
-  '/',
-  '/index.html',
-  '/scripts/site.js',
-  '/css/site.css'
+  "/",
+  "/css/site.css",
+  "/js/site.min.js",
+  "https://code.jquery.com/jquery-3.2.1.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit.min.js", 
+  "https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit-icons.min.js"
 ];
 
-self.addEventListener('install', function(e) {
-  console.log('[ServiceWorker] Install');
+self.addEventListener("install", function(e) {
+  console.log("[ServiceWorker] Install");
   e.waitUntil(
     caches.open(cacheName).then(function(cache) {
-      console.log('[ServiceWorker] Caching app shell');
+      console.log("[ServiceWorker] Caching app shell");
       return cache.addAll(filesToCache);
     })
   );
 });
 
-self.addEventListener('activate', function(e) {
-  console.log('[ServiceWorker] Activate');
+self.addEventListener("activate", function(e) {
+  console.log("[ServiceWorker] Activate");
   e.waitUntil(
     caches.keys().then(function(keyList) {
       return Promise.all(keyList.map(function(key) {
         if (key !== cacheName && key !== dataCacheName) {
-          console.log('[ServiceWorker] Removing old cache', key);
+          console.log("[ServiceWorker] Removing old cache", key);
           return caches.delete(key);
         }
       }));
@@ -34,9 +36,9 @@ self.addEventListener('activate', function(e) {
   return self.clients.claim();
 });
 
-self.addEventListener('fetch', function(e) {
-  console.log('[Service Worker] Fetch', e.request.url);
-  var dataUrl = 'https://query.yahooapis.com/v1/public/yql';
+self.addEventListener("fetch", function(e) {
+  console.log("[Service Worker] Fetch", e.request.url);
+  var dataUrl = "https://query.yahooapis.com/v1/public/yql";
   if (e.request.url.indexOf(dataUrl) > -1) {
     /*
      * When the request URL contains dataUrl, the app is asking for fresh

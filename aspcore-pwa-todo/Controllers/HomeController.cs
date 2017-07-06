@@ -14,7 +14,7 @@ namespace aspcore_pwa_todo.Controllers
             ViewBag.Message = "ASP.Net Core MVC Progressive Web Application TODO Example.";
 
             return View();
-        }
+        }    
 
         public IActionResult Contact()
         {

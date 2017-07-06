@@ -1,0 +1,22 @@
+{
+  "name": "aspcore-pwa-todo",
+  "version": "1.0.0",
+  "description": "ASP.Net Core Progressive Web App Todo example",
+  "main": "/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cecildt/aspcore-pwa-todo.git"
+  },
+  "author": "Cecil du Toit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cecildt/aspcore-pwa-todo/issues"
+  },
+  "homepage": "https://github.com/Cecildt/aspcore-pwa-todo#readme",
+  "devDependencies": {
+    "sw-precache": "^5.2.0"
+  }
+}
